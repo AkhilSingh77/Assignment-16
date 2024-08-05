@@ -18,7 +18,10 @@ const input  = document.getElementsByClassName("wrapper--text")[0];
 function createTag(){
     tagContainer.querySelectorAll(".sitag").forEach(tag => tag.remove())
     allTags.forEach((tag)=>{
-        let singleTag = `<div class="sitag">${tag}</div>`
+        let singleTag = `<div class="sitag">
+          <p>${tag}</p>
+          <i class="fa-regular fa-circle-xmark"></i>
+        </div>`
         tagContainer.insertAdjacentHTML("afterbegin",singleTag);
 
     })
