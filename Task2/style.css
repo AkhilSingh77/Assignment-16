@@ -1,0 +1,40 @@
+p, input {
+  margin: 0;
+  padding: 0;
+}
+
+.main {
+  background-color: blanchedalmond;
+  width: 50vw;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10vh;
+}
+.main__heading {
+  font-size: 3rem;
+}
+.main__input {
+  margin-top: 1.5rem;
+  width: 50%;
+  padding: 5px;
+  outline: none;
+  border: none;
+}
+.main__listcontainer {
+  width: 50%;
+  padding: 5px;
+  height: 300px;
+  background-color: beige;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.main__listcontainer .country {
+  font-size: 1.2rem;
+  margin-top: 3px;
+  border-bottom: 1px solid rgb(212, 211, 211);
+  width: 100%;
+}/*# sourceMappingURL=style.css.map */
