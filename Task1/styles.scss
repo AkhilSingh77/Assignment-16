@@ -1,0 +1,47 @@
+.wrapper{
+    height: 20vh;
+    width: 50vw;
+    background-color: burlywood;
+    border: 1px solid black;
+    margin: auto;
+    text-align: center;
+    padding-top: 1rem;
+    // display: flex;
+    // justify-content: center;
+    // align-items: center;
+    // gap: 1rem;
+    padding: 20px;
+
+    
+    &--text{
+        // width: 400px;
+        // height: 28px;
+        padding: 6px;
+        margin: 0;
+        
+    }
+    &--button{
+         padding: 0;
+         margin: 0;
+      width: 5rem;
+    height: 2rem;
+    }
+
+}
+
+
+
+.tagcontainer{
+    // background-color: red;
+    width: fit-content;
+    display: flex;
+    border: 2px solid black;
+    flex-wrap: wrap;
+}
+
+.sitag{
+  height: 100%;
+  width:30px;
+  background-color: green;
+ 
+}
