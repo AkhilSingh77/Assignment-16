@@ -30,6 +30,9 @@ function createTag(){
 const button = document.getElementsByClassName("wrapper--button")[0];
 button.addEventListener('click',()=>{
     let tag  = input.value;
+    if(tag=== ""){
+        alert("please enter tag")
+    }
     console.log(tag);
    if(tag.length>0 && !allTags.includes(tag)){
      tag.split(',').forEach((tag)=>{
@@ -38,4 +41,5 @@ button.addEventListener('click',()=>{
         createTag();
      })
    }
+   input.value ="";
 })

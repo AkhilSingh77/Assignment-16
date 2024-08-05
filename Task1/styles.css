@@ -1,19 +1,21 @@
 .wrapper {
   height: 20vh;
   width: 50vw;
-  background-color: burlywood;
   border: 1px solid black;
   margin: auto;
   text-align: center;
   padding-top: 1rem;
   display: flex;
+  justify-content: center;
+  align-items: center;
   padding: 20px;
   gap: 1rem;
 }
 .wrapper--text {
   min-width: 40px;
-  border: 1px solid red;
   flex: 1 0 40px;
+  outline: none;
+  border: none;
 }
 .wrapper--button {
   padding: 0;
@@ -38,6 +40,7 @@ h1 {
   -moz-column-gap: 5px;
        column-gap: 5px;
   padding: 5px;
+  row-gap: 4px;
 }
 
 .sitag {
