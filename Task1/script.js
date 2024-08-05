@@ -1,13 +1,5 @@
 const input1  = document.getElementsByClassName("wrapper--text")[0];
 
-// console.log("ss",input1.value);
-
-// let h ="hhhh";
-// let ing = document.getElementsByClassName("dd")[0];
-
-// const button = document.getElementsByClassName("wrapper--button")[0];
-// button.addEventListener('click',()=>{
-
 
 let allTags =[];
 
@@ -30,24 +22,28 @@ function createTag(){
     allTags.forEach((tag)=>{
         let singleTag = `<div class="sitag">
           <p>${tag}</p>
-          <i class="fa-regular fa-circle-xmark" onclick ="removetag(this ,'${tag}')" ></i>
+          <i class="fa-regular fa-circle-xmark cross" onclick ="removetag(this ,'${tag}')" ></i>
         </div>`
         tagContainer.insertAdjacentHTML("afterbegin",singleTag);
 
     })
 }
-
+   
 const button = document.getElementsByClassName("wrapper--button")[0];
 button.addEventListener('click',()=>{
-    let tag  = input.value;
-    if(tag=== ""){
+    let value  = input.value;
+    if(value=== ""){
         alert("please enter tag")
     }
-    console.log(tag);
+
+    let tag = value.replace(/\s+/g, ' ').trim();
+
+    
+    // console.log(tag);
    if(tag.length>0 && !allTags.includes(tag)){
      tag.split(',').forEach((tag)=>{
         allTags.unshift(tag);
-        console.log(allTags)
+        // console.log(allTags)
         createTag();
      })
    }
