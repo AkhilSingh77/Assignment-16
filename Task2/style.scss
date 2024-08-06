@@ -8,7 +8,7 @@ p,input{
     padding: 0;
 }
 .main{
-    background-color: blanchedalmond;
+    // background-color: blanchedalmond;
     width: 50vw;
     margin: auto;
     display: flex;
@@ -22,27 +22,33 @@ p,input{
     }
     &__input{
         margin-top:1.5rem;
-        width: 50%;
-        padding: 5px;
+        width: 65%;
+        padding: 7px;
         outline: none;
-        border: none;
+      border: 1px solid rgb(212, 211, 211);
     }
     &__listcontainer{
-        width: 50% ;
-        padding: 10px;
-        height: 150px;
-        background-color: beige;
+        width: 65% ;
+        // padding: 10px;
+        padding-top: 0;
+        max-height: 150px;
+        // background-color: beige;
         overflow-y: auto;
         display: flex;
         flex-direction: column;
         align-items: center;
+        // background-color: beige;
 
 
         .country{
-            font-size: 1.1rem;
+            font-size: 1rem;
+            
             padding: 5px;
             border-bottom:  1px solid rgb(212, 211, 211);
             width: 100%;
+            border: 1px solid rgb(212, 211, 211);
+            border-top: 0;
+            // background-color: aqua;
         }
     }
 }

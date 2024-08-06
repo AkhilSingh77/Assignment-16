@@ -33,7 +33,8 @@ const button = document.getElementsByClassName("wrapper--button")[0];
 button.addEventListener('click',()=>{
     let value  = input.value;
     if(value=== ""){
-        alert("please enter tag")
+        alert("please enter tag");
+        
     }
 
     let tag = value.replace(/\s+/g, ' ').trim();
