@@ -1,4 +1,24 @@
 .hide {
   display: none;
   background-color: black;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  background-color: antiquewhite;
+  gap: 1rem;
+  width: 40vw;
+  margin: auto;
+  padding: 1rem;
+}
+
+.all-elements {
+  font-size: 1.1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.all-elements label {
+  min-width: 52px;
 }/*# sourceMappingURL=styles.css.map */

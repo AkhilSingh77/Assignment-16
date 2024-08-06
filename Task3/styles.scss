@@ -2,3 +2,27 @@
     display: none;
     background-color: black;
 }
+
+.form{
+    display: flex;
+    flex-direction: column;
+    background-color: antiquewhite;
+    gap: 1rem;
+    width: 40vw;
+    margin: auto;
+    padding: 1rem;
+}
+
+.all-elements{
+//    background-color: red;
+   font-size: 1.1rem;
+    display: flex;
+    // justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    
+    label{
+        // background-color: aqua;
+        min-width: 52px;
+    }
+}
