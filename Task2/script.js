@@ -82,7 +82,7 @@ input.addEventListener("input", (event) => {
   const newarray = countries.filter((country) =>
     country.toLowerCase().includes(value)
   );
-  console.log(newarray);
+  // console.log(newarray);
   // if(!newarray.length >0){
   //   alert("word not present");
   //   return;
