@@ -24,7 +24,7 @@ const InputListconfig = [
       value: "",
       label: "Email: ",
     },
-    { type: "checkbox", id: "", name: "accept", required: "", checked: "", value: "", label: "" },
+    { type: "checkbox", id: "", name: "accept", required: "", checked: "", value: "", label: "Accept" },
     {
       type: "password",
       id: "",
@@ -47,7 +47,7 @@ const InputListconfig = [
       name: "state",
       required: "",
       value: "delhi",
-      label: "",
+      label: "Choose Country",
       options: [
         { label: "Delhi", value: "delhi" },
         { label: "Mumbai", value: "mumbai" },
@@ -60,16 +60,13 @@ const InputListconfig = [
   const formContainer = document.getElementsByClassName("form__container")[0];
 //  console.log("formcontainer",formContainer);
 
- function createText(element){
+ function createElementOtherThanSelect(element){
     const createInput = document.createElement("input");
 
     const form = document.getElementsByClassName('form')[0];
-   const attri =Object.entries(element);
-  const keyss = Object.keys(element);
-  console.log("kk",keyss);
-//   console.log(element.keyss[9]);
-     console.log(attri);
-   attri.forEach(([key,value])=>{
+   const keyValueArray =Object.entries(element);
+     console.log(keyValueArray); 
+     keyValueArray.forEach(([key,value])=>{
    if(key == "label"){
     const createlabel = document.createElement("label");
     createlabel.innerText = value;
@@ -87,27 +84,67 @@ const InputListconfig = [
    console.log(createInput);
    form.appendChild(createInput);
   }
-//   const formElement = document.getElementsByClassName("dynamic__form")[0];
 
+
+
+function createSelect(element){
+  const createSelect = document.createElement("select");
+  console.log("selectss",createSelect);
+
+  const form = document.getElementsByClassName('form')[0];
+ const keyValueArray =Object.entries(element);
+
+   console.log("select",attri);
+   keyValueArray.forEach(([key,value])=>{
+ if(key == "label"){
+  const createlabel = document.createElement("label");
+  createlabel.innerText = value;
+  form.appendChild(createlabel);
+  
+ }
+ else if(key === "options"){
+  
+   value.forEach(({label,value})=>{
+    
+    const createOption = document.createElement("option");
+    createOption.innerText = label;
+    createOption.setAttribute("value",value);
+    createSelect.appendChild(createOption);
+
+   })
+
+ }
+ else if(key === "type"){
+    return;
+ }
+ else{
+  createInput.setAttribute(key, value);
+ }
+ 
+ })
+ console.log(createInput);
+ form.appendChild(createInput);
+
+}
 
   generateButton.addEventListener("click",()=>{
     //form element create
     generateButton.classList.add('hide');
- const formElement =   document.createElement('form');
- formElement.classList.add("form");
- formContainer.appendChild(formElement);
+    const formElement =   document.createElement('form');
+    formElement.classList.add("form");
+    formContainer.appendChild(formElement);
 
  
    InputListconfig.forEach((singleInputs)=>{
     console.log(singleInputs);
     const whatIsInputElement = singleInputs.type;
     console.log(whatIsInputElement);
-    if(whatIsInputElement === "text" || whatIsInputElement === "email"|| whatIsInputElement === "password"){
-        createText(singleInputs);
+    if(whatIsInputElement === "text" || whatIsInputElement === "email"|| whatIsInputElement === "password" || whatIsInputElement === "date"|| whatIsInputElement === "number"|| whatIsInputElement === "radio" || whatIsInputElement === "checkbox"){
+        createElementOtherThanSelect(singleInputs);
     }
-    // else if(whatIsInputElement === "email"){
-       
-    // }
+    else if(whatIsInputElement === "select"){
+        createSelect(singleInputs);
+    }
    })
   })
 
