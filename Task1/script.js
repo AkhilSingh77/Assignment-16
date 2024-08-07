@@ -5,6 +5,7 @@ let allTags =[];
 
 const tagContainer = document.getElementsByClassName("tagcontainer")[0];
 const input  = document.getElementsByClassName("wrapper--text")[0];
+const condition =  document.getElementsByClassName("condition")[0];
 
 function removetag(element ,tag){
     let index = allTags.indexOf(tag);
@@ -32,7 +33,7 @@ function createTag(){
 const body = document.querySelector('body');
 function functionality(){
     let value  = input.value;
-    const condition =  document.getElementsByClassName("condition")[0];
+
     if(value=== ""){
         // alert("please enter tag");
     
@@ -69,4 +70,8 @@ const button = document.getElementsByClassName("wrapper--button")[0];
 button.addEventListener('click',()=>{
 
    functionality();
+})
+
+input.addEventListener('input',()=>{
+    condition.textContent =""   ; 
 })
