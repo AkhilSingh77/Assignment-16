@@ -11,6 +11,7 @@
     align-items: center;
     // gap: 1rem;
     padding: 20px;
+    padding-bottom: 0px;
     gap: 0.3rem;
 
     
@@ -45,6 +46,12 @@
     }
 
 }
+
+// body{
+//   background-color: aqua;
+//   // width: fit-content;
+ 
+// }
 
 h1{
     text-align: center;
@@ -91,4 +98,13 @@ padding: 5px;
 .cross:hover{
     cursor: pointer;
    scale: 1.05;
+}
+
+.condition{
+  color: red;
+  // background-color: burlywood;
+  width: 36.5vw;
+  // padding: 20px;
+  margin: auto;
+
 }

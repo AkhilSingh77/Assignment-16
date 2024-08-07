@@ -8,6 +8,7 @@
   justify-content: center;
   align-items: center;
   padding: 20px;
+  padding-bottom: 0px;
   gap: 0.3rem;
 }
 .wrapper--text {
@@ -71,4 +72,10 @@ h1 {
 .cross:hover {
   cursor: pointer;
   scale: 1.05;
+}
+
+.condition {
+  color: red;
+  width: 36.5vw;
+  margin: auto;
 }/*# sourceMappingURL=styles.css.map */

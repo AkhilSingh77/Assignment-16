@@ -28,13 +28,19 @@ function createTag(){
 
     })
 }
-   
-const button = document.getElementsByClassName("wrapper--button")[0];
-button.addEventListener('click',()=>{
+
+const body = document.querySelector('body');
+function functionality(){
     let value  = input.value;
+    const condition =  document.getElementsByClassName("condition")[0];
     if(value=== ""){
-        alert("please enter tag");
-        
+        // alert("please enter tag");
+    
+     condition.textContent ="Please enter a tag"
+
+    }
+    else{
+        condition.textContent =""  ; 
     }
 
     let tag = value.replace(/\s+/g, ' ').trim();
@@ -49,4 +55,18 @@ button.addEventListener('click',()=>{
      })
    }
    input.value ="";
+}
+
+
+ body.addEventListener('keydown',(event)=>{
+    // console.log("hii")
+    if(event.key === 'Enter'){
+       functionality();
+    }
+ })
+   
+const button = document.getElementsByClassName("wrapper--button")[0];
+button.addEventListener('click',()=>{
+
+   functionality();
 })
