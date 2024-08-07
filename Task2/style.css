@@ -34,6 +34,7 @@ p, input {
   display: flex;
   flex-direction: column;
   align-items: center;
+  border-bottom: 0.5px solid black;
 }
 .main__listcontainer .country {
   font-size: 1rem;

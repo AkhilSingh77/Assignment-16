@@ -28,8 +28,8 @@ const InputListconfig = [
     id: "accept_id",
     name: "accept",
     required: "true",
-    checked: "",
-    value: "yes",
+    // checked: undefined,
+    value: "",
     label: "Accept Terms",
   },
   {
@@ -71,7 +71,7 @@ const InputListconfig = [
     id: "gender_male_id",
     name: "gender",
     required: "true",
-    checked: "",
+    // checked: "",
     value: "Male",
     label: "Male",
   },
@@ -80,7 +80,7 @@ const InputListconfig = [
     id: "gender_female_id",
     name: "gender",
     required: "true",
-    checked: "",
+    // checked: "",
     value: "Female",
     label: "Female",
   },
@@ -130,6 +130,7 @@ const InputListconfig = [
    else{
     // console.log("input2",createInput); 
     createInput.setAttribute(key, value);
+    // console.log({key,value})
    }
    
    })
