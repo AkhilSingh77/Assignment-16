@@ -38,6 +38,8 @@ const countries = [
   "Mexico",
   "Mexican",
   "Mexicali",
+  "Australia",
+  "Dubai",
   "Uniform",
   "Unique",
   "United Kingdom",
