@@ -1,60 +1,111 @@
-
 const InputListconfig = [
-    {
-      type: "text",
-      id: "",
-      name: "full_name",
-      maxLength: "",
-      minLength: "",
-      pattern: "",
-      placeholder: "",
-      required: "",
-      value: "",
-      label: "Name:",
-    },
-    {
-      type: "email",
-      id: "",
-      name: "email",
-      maxLength: "",
-      minLength: "",
-      pattern: "",
-      placeholder: "",
-      required: "",
-      value: "",
-      label: "Email:",
-    },
-    { type: "checkbox", id: "", name: "accept", required: "", checked: "", value: "", label: "Accept" },
-    {
-      type: "password",
-      id: "",
-      name: "password",
-      maxLength: "",
-      minLength: "",
-      pattern: "",
-      placeholder: "",
-      required: "",
-      value: "",
-      label: "Password:",
-    },
-    { type: "date", id: "", name: "dob", max: "", min: "", placeholder: "", required: "", value: "", label: "Date" },
-    { type: "number", id: "", name: "marks", min: "", max: "", placeholder: "", required: "", value: "", label: "Number" },
-    { type: "radio", id: "", name: "gender", required: "", checked: "", value: "Male", label: "Male" },
-    { type: "radio", id: "", name: "gender", required: "", checked: "", value: "Female", label: "Female" },
-    {
-      type: "select",
-      id: "",
-      name: "state",
-      required: "",
-      value: "delhi",
-      label: "Choose Country",
-      options: [
-        { label: "Delhi", value: "delhi" },
-        { label: "Mumbai", value: "mumbai" },
-        { label: "UP", value: "Up" },
-      ],
-    },
-  ];
+  {
+    type: "text",
+    id: "full_name_id",
+    name: "full_name",
+    maxLength: "50",
+    minLength: "2",
+    pattern: "[A-Za-z ]+",
+    placeholder: "Enter your full name",
+    required: "true",
+    value: "",
+    label: "Name:",
+  },
+  {
+    type: "email",
+    id: "email_id",
+    name: "email",
+    maxLength: "30",
+    minLength: "5",
+    pattern: "[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,}$",
+    placeholder: "Enter your email",
+    required: "true",
+    value: "",
+    label: "Email:",
+  },
+  {
+    type: "checkbox",
+    id: "accept_id",
+    name: "accept",
+    required: "true",
+    checked: "",
+    value: "yes",
+    label: "Accept Terms",
+  },
+  {
+    type: "password",
+    id: "password_id",
+    name: "password",
+    maxLength: "20",
+    minLength: "8",
+    pattern: "(?=.*\\d)(?=.*[a-z])(?=.*[A-Z]).{8,}",
+    placeholder: "Enter your password",
+    required: "true",
+    value: "",
+    label: "Password:",
+  },
+  {
+    type: "date",
+    id: "dob_id",
+    name: "dob",
+    max: "2023-12-31",
+    min: "2000-04-01",
+    placeholder: "",
+    required: "true",
+    value: "",
+    label: "Date of Birth:",
+  },
+  {
+    type: "number",
+    id: "marks_id",
+    name: "marks",
+    min: "0",
+    max: "100",
+    placeholder: "Enter your marks",
+    required: "true",
+    value: "",
+    label: "Marks:",
+  },
+  {
+    type: "radio",
+    id: "gender_male_id",
+    name: "gender",
+    required: "true",
+    checked: "",
+    value: "Male",
+    label: "Male",
+  },
+  {
+    type: "radio",
+    id: "gender_female_id",
+    name: "gender",
+    required: "true",
+    checked: "",
+    value: "Female",
+    label: "Female",
+  },
+  {
+    type: "select",
+    id: "state_id",
+    name: "state",
+    required: "true",
+    value: "delhi",
+    label: "Choose State",
+    options: [
+      { label: "Delhi", value: "delhi" },
+      { label: "Mumbai", value: "mumbai" },
+      { label: "UP", value: "up" },
+    ],
+  },
+  {
+    type: "submit",
+    id: "submit_id",
+    name: "submit",
+    value: "Submit",
+
+  },
+];
+
 
   const generateButton = document.getElementsByClassName("generate__form")[0];
   const formContainer = document.getElementsByClassName("form__container")[0];
@@ -63,7 +114,9 @@ const InputListconfig = [
  function createElementOtherThanSelect(element){
     const createInput = document.createElement("input");
     const createDiv = document.createElement("div");
-    createDiv.classList.add("all-elements")
+    createDiv.classList.add("all-elements");
+    const elementClass = element.id;
+   createDiv.classList.add(`form__${elementClass}`);
     const form = document.getElementsByClassName('form')[0];
    const keyValueArray =Object.entries(element);
     //  console.log(keyValueArray); 
@@ -72,14 +125,10 @@ const InputListconfig = [
     const createlabel = document.createElement("label");
     createlabel.innerText = value;
     createDiv.appendChild(createlabel);
-    // form.appendChild(createDiv);
-    // console.log(createlabel);
-    // console.log("ll",key);
-    
-    
+
    }
    else{
-    console.log("input2",createInput); 
+    // console.log("input2",createInput); 
     createInput.setAttribute(key, value);
    }
    
@@ -103,9 +152,10 @@ function createSelect(element){
    keyValueArray.forEach(([key,value])=>{
  if(key == "label"){
   const createlabel = document.createElement("label");
+ 
   createlabel.innerText = value;
   createDiv.appendChild(createlabel);
-  // form.appendChild(createlabel);
+
   
  }
  else if(key === "options"){
@@ -134,6 +184,25 @@ createDiv.append(selectElement);
 
 }
 
+function createButton(element){
+//  console.log("button",element);
+const createInput = document.createElement("input");
+
+const form = document.getElementsByClassName('form')[0];
+const keyValueArray =Object.entries(element);
+//  console.log(keyValueArray); 
+ keyValueArray.forEach(([key,value])=>{
+// console.log("input2",createInput); 
+createInput.setAttribute(key, value);
+
+
+})
+// //  console.log(createInput);
+
+form.appendChild(createInput);
+
+}
+
   generateButton.addEventListener("click",()=>{
     //form element create
     generateButton.classList.add('hide');
@@ -151,6 +220,9 @@ createDiv.append(selectElement);
     }
     else if(whatIsInputElement === "select"){
         createSelect(singleInputs);
+    }
+    else{
+      createButton(singleInputs);
     }
    })
   })
